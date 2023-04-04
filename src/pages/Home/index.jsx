@@ -24,6 +24,7 @@ export default function Home() {
       />
 
       <span>{cep?.localidade}</span>
+      <span>{data}</span>
     </div>
   )
 }
