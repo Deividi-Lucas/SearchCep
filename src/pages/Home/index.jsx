@@ -15,23 +15,25 @@ export default function Home() {
   }
   return (
     <div className="main_container">
-      <h1>SearchCep</h1>
+      <div className="aplication">
+        <h1>SearchCep</h1>
 
-      <Input
-        placeholder="Write your CEP: "
-        onChange={e => setData(e.target.value)}
-        type="number"
-      />
+        <Input
+          placeholder="Write your CEP: "
+          onChange={e => setData(e.target.value)}
+          type="number"
+        />
 
-      <Button title={'Send'} onclick={getCep} />
+        <Button title={'Send'} onclick={getCep} />
 
-      <span>
-        {cep?.localidade}
-        <br />
-        {cep?.uf}
-        <br />
-        {cep?.bairro}
-      </span>
+        <span>
+          {cep?.localidade}
+          <br />
+          {cep?.uf}
+          <br />
+          {cep?.bairro}
+        </span>
+      </div>
     </div>
   )
 }
