@@ -1,3 +1,4 @@
+import './style.scss'
 export default function ({ placeholder, onChange, onKeyUp, type }) {
   return (
     <input
