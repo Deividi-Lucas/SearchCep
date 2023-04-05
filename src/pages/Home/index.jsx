@@ -2,15 +2,15 @@ import './style.scss'
 import Input from '../../components/Input'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import PressEnter from '../../utils/PressEnter'
+import Button from '../../components/Button'
 
 export default function Home() {
-  const [cep, setCep] = useState(0)
+  const [cep, setCep] = useState('')
   const [data, setData] = useState(0)
 
-  function getCep(value) {
+  function getCep() {
     axios
-      .get(`https://viacep.com.br/ws/${value}/json/`)
+      .get(`https://viacep.com.br/ws/${data}/json/`)
       .then(Response => setCep(Response.data))
   }
   return (
@@ -23,8 +23,15 @@ export default function Home() {
         type="number"
       />
 
-      <span>{cep?.localidade}</span>
-      <span>{data}</span>
+      <Button title={'Send'} onclick={getCep} />
+
+      <span>
+        {cep?.localidade}
+        <br />
+        {cep?.uf}
+        <br />
+        {cep?.bairro}
+      </span>
     </div>
   )
 }
