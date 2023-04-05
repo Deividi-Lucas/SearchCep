@@ -1,6 +1,6 @@
 import './style.scss'
 import Input from '../../components/Input'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import axios from 'axios'
 import Button from '../../components/Button'
 
