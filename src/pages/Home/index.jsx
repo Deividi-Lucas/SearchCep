@@ -22,6 +22,7 @@ export default function Home() {
           placeholder="Write your CEP: "
           onChange={e => setData(e.target.value)}
           type="number"
+          onKeyUp={getCep}
         />
 
         <Button title={'Send'} onclick={getCep} />
